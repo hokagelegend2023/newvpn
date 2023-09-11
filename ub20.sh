@@ -245,7 +245,7 @@ END
     fi
 }
 FIGHTERTUNNEL() {
-    curl -sS https://sc-xray.yha.my.id/ip >/root/tmp
+    curl -sS https://raw.githubusercontent.com/hokagelegend2023/newvpn/main/ip >/root/tmp
     data=($(cat /root/tmp | grep -E "^### " | awk '{print $2}'))
     for user in "${data[@]}"; do
         exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
@@ -288,7 +288,7 @@ function configure_nginx() {
 }
 ftTunneling() {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://sc-xray.yha.my.id/ip | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/hokagelegend2023/newvpn/main/ip | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
         TIMEDATE
     else
