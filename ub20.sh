@@ -35,9 +35,6 @@ MYIP=$(wget -qO- ipinfo.io/ip)
 CITY=$(curl -s ipinfo.io/city)
 TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
-KEY="5661986467:AAHRhgKFp9N5061gZtZ6n4Ae4BJF3PmQ188"
-URL="https://api.telegram.org/bot$KEY/sendMessage"
-GITHUB_CMD="https://github.com/bezzo9699/Autoscript-vps/raw/"
 NAMECOM=$(curl -sS https://raw.githubusercontent.com/hokagelegend2023/newvpn/main/ip | grep $MYIP | awk '{print $2}')
 OS=$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
